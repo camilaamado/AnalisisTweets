@@ -1,0 +1,10 @@
+# Entornos virtuales
+cami/ 
+
+# Archivos de resultados del modelo
+topics_results.pkl
+bertopic_model.pkl
+sentiment_results.pkl
+sentiment_results.csv
+sentiment_tweets3.csv
+
