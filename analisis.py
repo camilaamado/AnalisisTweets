@@ -1,34 +1,43 @@
-#analisis de modelo de tópicos y análisis de sentimientos
-
-#Analisis de topicos
-
+#Importar las librerías necesarias
 import joblib
-from bertopic import BERTopic
+import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')
+import pandas as pd
+import matplotlib.pyplot as plt
 
-# Cargar el modelo BERTopic guardado
+
+# Cargar los tweets limpios 
+cleaned_tweets = joblib.load("cleaned_tweets.pkl")
+# Cargar los tópicos asignados a cada tweet
+topics = joblib.load("topics_results.pkl")
+#cargar el modelo
 topic_model = joblib.load("bertopic_model.pkl")
+# Cambiar los nombres de los tópicos
+topics = np.array(topics) + 1
 
-# Obtener los tópicos y sus palabras más comunes
-topics = topic_model.get_topics()
+#################### Distribución de los tópicos######################
 
-# Iterar sobre los tópicos y obtener las 10 palabras más comunes
-for topic_id, words in topics.items():
-    print(f"Tópico {topic_id}:")
-    top_words = [word for word, _ in words[:10]]  # Las 10 palabras más comunes
-    print(top_words)
-    print("\n")
+topic_counts = pd.Series(topics).value_counts()
+porcentaje = topic_counts / topic_counts.sum() * 100
 
-# Verificar si el modelo tiene tópicos
-#print(topic_model.get_topics())
+plt.figure(figsize=(8, 6))
+topic_counts.plot(kind='bar', color='red')
+for i in range(len(topic_counts)):
+    plt.text(i, topic_counts[i], str(round(porcentaje[i], 2)) + "%", ha='center', va='bottom')
+plt.title("Distribución de los Tópicos")
+plt.xlabel("Tópicos")
+plt.ylabel("Número de Tweets")
+plt.xticks(rotation=0)
+plt.show()
 
+######################Palabras clave por Tópico##########################
 
-#######################
+# Obtener las palabras clave por tópico
+words = topic_model.get_topic_info()
 
-# Ver los tópicos generados
-topics = topic_model.get_topics()
+# Mostrar las 5 palabras clave más importantes de cada tópico
+for topic_id in range(len(topic_model.get_topics())):
+    print(f"Topic {topic_id}: {topic_model.get_topic(topic_id)}")
 
-# Ver todos los tópicos y las palabras asociadas
-print(topics)
-
-# Ver el número de tópicos generados
-print(f"Cantidad de tópicos generados: {topic_model.get_topics()}")
+######################Similitudes entre los Tópicos utilizando UMAP##########################

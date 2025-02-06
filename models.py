@@ -52,6 +52,8 @@ topic_model, topics = train_topic_model(cleaned_tweets)
 # Guardar el modelo y los tópicos
 joblib.dump(topic_model, "bertopic_model.pkl")
 joblib.dump(topics, "topics_results.pkl")
+# Guardar cleaned_tweets en un archivo .pkl
+joblib.dump(cleaned_tweets, "cleaned_tweets.pkl")
 
 # ========================
 # Análisis de Sentimiento
