@@ -8,3 +8,8 @@ sentiment_results.pkl
 sentiment_results.csv
 sentiment_tweets3.csv
 
+
+mock.py/
+mock.py
+__pycache__/
+

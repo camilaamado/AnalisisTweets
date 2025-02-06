@@ -18,11 +18,9 @@ from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 # Cargar datos desde el archivo CSV
 
 archivo_csv = '/home/mario/Documents/camiApp/sentiment_tweets3.csv'
-data = pd.read_csv(archivo_csv, encoding='latin-1', header=None, names=['ID_tweet', 'tweet'])
-print(data.head())
-print(data.info())
-print(data.shape)  # Número de filas y columnas
-print(data.columns)  # Nombre de las columnas detectadas
+data = pd.read_csv(archivo_csv, encoding='latin-1', header=None)
+data = data.iloc[:, [1]] # Seleccionar solo la segunda columna
+data.columns = ['tweet']
 
 # ========================
 # Preprocesamiento de texto
@@ -43,21 +41,12 @@ cleaned_tweets = data['clean_tweet'].tolist()
 # ========================
 
 def train_topic_model(cleaned_tweets):
-    custom_stop_words = list(ENGLISH_STOP_WORDS.union({"tweet", "tweets", "twitter", "user", "account", "mention", "hashtag",
-    "also", "will", "one", "like", "dont", "just", "people", "thing", "think",
-    "really", "know", "good", "bad", "time", "new", "old", "today", "yesterday",
-    "comment", "share", "watch", "view", "click", "subscribe", "link", "bio",
-    "profile", "live", "news", "video", "photo", "pic", "pics", "media",
-    "lol", "lmao", "haha", "omg", "hmm", "ugh", "wow", "awww",
-    "he", "she", "they", "them", "his", "her", "its", "him", "me", "mine",
-    "ours", "your", "yours", "whats", "wasnt", "isnt", "arent", "aint",
-    "shouldnt", "couldnt", "wouldnt"
+    custom_stop_words = list(ENGLISH_STOP_WORDS.union({"tweet", "tweets", "twitter", "user", "account", "mention", "hashtag"
 }))
-    topic_model = BERTopic(nr_topics=10, top_n_words=10)
-    topic_model.vectorizer_model.set_params(stop_words=custom_stop_words)
-    topics, probabilities = topic_model.fit_transform(cleaned_tweets)
+    topic_model = BERTopic(nr_topics=5, top_n_words=5) #5 tópicos y 5 palabras por tópico
+    topic_model.vectorizer_model.set_params(stop_words=custom_stop_words) 
+    topics, probabilities = topic_model.fit_transform(cleaned_tweets) 
     return topic_model, topics
-
 topic_model, topics = train_topic_model(cleaned_tweets)
 
 # Guardar el modelo y los tópicos
