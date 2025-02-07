@@ -33,11 +33,14 @@ plt.show()
 
 ######################Palabras clave por Tópico##########################
 
-# Obtener las palabras clave por tópico
-words = topic_model.get_topic_info()
+topic_info = topic_model.get_topic_info()
 
 # Mostrar las 5 palabras clave más importantes de cada tópico
 for topic_id in range(len(topic_model.get_topics())):
     print(f"Topic {topic_id}: {topic_model.get_topic(topic_id)}")
 
-######################Similitudes entre los Tópicos utilizando UMAP##########################
+topic_info.to_csv("/home/mario/Documents/camiApp/data/fivetopics_Berttopics.csv", index=False)# Guardar en un archivo CSV
+
+
+###################### Similitudes entre los Tópicos utilizando UMAP ##########################
+

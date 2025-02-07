@@ -2,6 +2,7 @@
 cami/ 
 
 # Archivos de resultados del modelo
+data/
 topics_results.pkl
 bertopic_model.pkl
 cleaned_tweets.pkl
@@ -9,6 +10,10 @@ embeddings.pkl
 sentiment_results.pkl
 sentiment_results.csv
 sentiment_tweets3.csv
+topic_emebeddings.pkl
+cleaned_tweets.pkl
+embeddingsTopics.pkl
+
 
 
 
