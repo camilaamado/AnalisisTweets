@@ -20,15 +20,20 @@ data = load_data(archivo_csv)
 # Aplicar limpieza llamando a la función preprocess_text
 data["cleaned_tweets"] = data["text"].apply(preprocess_text)
 
+# Filtrar tweets vacíos después de la limpieza
+filtered_tweets = [tweet for tweet in data["cleaned_tweets"].tolist() if tweet.strip()]
+
 # ========================
 # Guardado de datos
 # ========================
 
-def save_data(data, file_path):
-    """Guarda un DataFrame en un archivo .pkl."""
-    joblib.dump(data, file_path)
-
+# Guardar solo la columna de tweets limpios en el archivo .pkl
 output_path = "/home/mario/Documents/camiApp/data/CleanAndEmbeddins/cleaned_tweets.pkl"
-save_data(data, output_path)
+joblib.dump(filtered_tweets, output_path)
 
-print("Tweets limpiados y guardados correctamente.")
+
+
+# Cargar y verificar los datos guardados
+loaded_tweets = joblib.load(output_path)
+print(f"✅ Tweets guardados correctamente: {len(loaded_tweets)} tweets")
+print(f"🔍 Ejemplo de tweets limpios: {loaded_tweets[:5]}")  # Mostrar algunos ejemplos

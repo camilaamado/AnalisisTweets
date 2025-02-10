@@ -13,9 +13,13 @@ sentiment_tweets3.csv
 topic_emebeddings.pkl
 cleaned_tweets.pkl
 embeddingsTopics.pkl
+results/
 
 
+analisis.py
+models.py
 
+data/
 
 mock.py/
 mock.py

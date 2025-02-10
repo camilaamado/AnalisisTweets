@@ -1,18 +1,16 @@
-## Funciones de limpieza de texto
-
 import re
 import unicodedata
 import emoji
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-
-
 import nltk
+
 nltk.download("stopwords")
 nltk.download("punkt")
 
-# Lista de stopwords en español e inglés
+# Lista de stopwords en español e inglés con personalizadas
 STOPWORDS = set(stopwords.words("spanish") + stopwords.words("english"))
+custom_stopwords = STOPWORDS.union({"amp", "haha", "lol"})  # Agregar stopwords personalizadas
 
 def remove_mentions(text):
     """Elimina menciones (@usuario) de un tweet"""
@@ -41,9 +39,9 @@ def normalize_text(text):
     return text
 
 def remove_stopwords(text):
-    """Elimina stopwords del texto"""
+    """Elimina stopwords del texto, incluyendo las personalizadas"""
     words = word_tokenize(text)
-    words_filtered = [word for word in words if word not in STOPWORDS]
+    words_filtered = [word for word in words if word not in custom_stopwords]  # Filtrar stopwords
     return " ".join(words_filtered)
 
 def preprocess_text(text):
@@ -56,4 +54,3 @@ def preprocess_text(text):
     text = normalize_text(text)
     text = remove_stopwords(text)
     return text.strip()
-

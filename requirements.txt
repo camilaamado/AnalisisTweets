@@ -1,5 +1,6 @@
 #pip install -r requirements.txt
 
+wordcloud == 1.8.1
 bertopic==0.9.1
 nltk==3.8.1
 emoji==1.6.0
