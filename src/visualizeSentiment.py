@@ -28,7 +28,7 @@ plt.ylabel("Número de Tweets")
 plt.title("Distribución de Sentimientos por Tópico")
 plt.legend(["Negativo", "Neutral", "Positivo"])
 plt.xticks(rotation=90)
-#plt.show()
+plt.show()
 
 #Heatmap de Sentimiento Promedio por Tópico
 topic_sentiment_avg = df_filtered.groupby("topic")["sentiment_score"].mean().reset_index()
@@ -40,7 +40,7 @@ sns.heatmap(topic_sentiment_avg.pivot(index="topic", columns="sentiment_score", 
 plt.xlabel("Sentimiento")
 plt.ylabel("Tópico")
 plt.title("Sentimiento Promedio por Tópico")
-#plt.show()
+plt.show()
 #Qué tópicos tienden a ser más positivos o negativos. Identifica temas con opiniones extremas.
 
 
@@ -51,7 +51,7 @@ plt.xlabel("Tópico")
 plt.ylabel("Sentimiento (Polaridad)")
 plt.title("Distribución de Polaridad por Tópico")
 plt.xticks(rotation=90)
-#plt.show()
+plt.show()
 #isualizar la variabilidad del sentimiento dentro de cada tópico.Si un tópico tiene una gran dispersión en sentimientos (mezcla de opiniones).
 #Identifica tópicos con sentimientos polarizados.
 
