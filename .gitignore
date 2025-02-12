@@ -1,32 +1,30 @@
 # Entornos virtuales
 cami/ 
 
-# Archivos de resultados del modelo
-data/
-topics_results.pkl
-bertopic_model.pkl
-cleaned_tweets.pkl
-embeddings.pkl
-sentiment_results.pkl
-sentiment_results.csv
-sentiment_tweets3.csv
-topic_emebeddings.pkl
-cleaned_tweets.pkl
-embeddingsTopics.pkl
-results/
-
-
-analisis.py
-models.py
-
-data/
-
-mock.py/
-mock.py
-__pycache__/
+# Archivos de prueba y notas
 info.txt
-distribucion de los topicos.png
+testModels.py
+topic_embeddings.py
 
+#cache
+__pycache__/
 
+# Data
+BERTopic_model.pkl
+sdf_filtered.csv
+SentimentResults.pkl
+sentiment_topic_analysis.csv
+sentiment_results.pkl
+## Archivos de resultados
+cleaned_tweets.pkl
+sentiment_embeddings.pkl
+topic_embeddings.pkl
+#raw data
+sentiment_tweets3.csv
+#saved models
+bertopic_model.pkl
+sentiment_results.csv
+sentiment_results.pkl
+topics_results.pkl
 
 

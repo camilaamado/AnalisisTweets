@@ -1,47 +1,73 @@
 #pip install -r requirements.txt
 
+# Core Libraries
 numpy>=2.0.0
-numba==0.61.0
-plotly ==5.10.0
-configparser==5.0.0
-wordcloud==1.9.4
-bertopic==0.9.1
-nltk==3.8.1
-emoji==1.6.0
-stopwords==1.0.0
-seaborn==0.11.2
-scikit-learn == 1.4.2
-
-sentence-transformers==3.4.1
-umap-learn 
+pandas==2.2.3
+scikit-learn==1.6.1
+scipy==1.15.1
 matplotlib==3.6.2
-joblib==1.4.2  
+seaborn==0.11.2
+plotly
 altair==5.5.0
+joblib==1.4.2
+tqdm==4.67.1
+scipy==1.15.1
+sympy==1.13.1
+statsmodels==0.15.0
+
+# NLP and Transformers
+transformers==4.48.2
+sentence-transformers==3.4.1
+tokenizers==0.21.0
+huggingface-hub==0.28.1
+torch==2.6.0
+
+# Data Storage and Management
+pyarrow==19.0.0
+pillow==11.1.0
+protobuf==5.29.3
+jsonschema==4.23.0
+pydeck==0.9.1
+requests==2.32.3
+urllib3==2.3.0
+
+# Topic Modeling and Clustering
+bertopic==0.9.1
+umap-learn==0.5.7
+hdbscan==0.8.40
+pynndescent==0.5.13
+networkx==3.4.2
+
+# Data Cleaning and Text Processing
+nltk==3.8.1
+stopwords==1.0.0
+regex==2024.11.6
+emoji==1.6.0
+wordcloud==1.9.4
+configparser==5.0.0
 attrs==25.1.0
-blinker==1.9.0
-cachetools==5.5.1
-certifi==2025.1.31
-charset-normalizer==3.4.1
-click==8.1.8
+rich==13.9.4
+tenacity==9.0.0
 filelock==3.17.0
 fsspec==2025.2.0
-gitdb==4.0.12
-GitPython==3.1.44
-hdbscan==0.8.40
-huggingface-hub==0.28.1
+tornado==6.4.2
+
+# System Utilities
+click==8.1.8
+packaging==24.2
+charset-normalizer==3.4.1
 idna==3.10
 Jinja2==3.1.5
-joblib==1.4.2
-jsonschema==4.23.0
-jsonschema-specifications==2024.10.1
-llvmlite==0.44.0
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
-mdurl==0.1.2
-mpmath==1.3.0
-narwhals==1.25.1
-networkx==3.4.2
-numba==0.61.0
+jsonschema-specifications==2024.10.1
+smmap==5.0.2
+toml==0.10.2
+python-dateutil==2.9.0.post0
+pytz==2025.1
+PyYAML==6.0.2
+
+# GPU/Hardware Acceleration (if needed)
 nvidia-cublas-cu12==12.4.5.8
 nvidia-cuda-cupti-cu12==12.4.127
 nvidia-cuda-nvrtc-cu12==12.4.127
@@ -55,42 +81,12 @@ nvidia-cusparselt-cu12==0.6.2
 nvidia-nccl-cu12==2.21.5
 nvidia-nvjitlink-cu12==12.4.127
 nvidia-nvtx-cu12==12.4.127
-packaging==24.2
-pandas==2.2.3
-pillow==11.1.0
-protobuf==5.29.3
-pyarrow==19.0.0
-pydeck==0.9.1
-Pygments==2.19.1
-pynndescent==0.5.13
-python-dateutil==2.9.0.post0
-pytz==2025.1
-PyYAML==6.0.2
-referencing==0.36.2
-regex==2024.11.6
-requests==2.32.3
-rich==13.9.4
-rpds-py==0.22.3
-safetensors==0.5.2
 
-scipy==1.15.1
-sentence-transformers==3.4.1
-setuptools==75.8.0
-six==1.17.0
+# Development Tools
+gitdb==4.0.12
+GitPython==3.1.44
+attrs==25.1.0
+blinker==1.9.0
+cachetools==5.5.1
 smmap==5.0.2
-streamlit==1.41.0
-sympy==1.13.1
-tenacity==9.0.0
-threadpoolctl==3.5.0
-tokenizers==0.21.0
-toml==0.10.2
-torch==2.6.0
-tornado==6.4.2
-tqdm==4.67.1
-transformers==4.48.2
-triton==3.2.0
-typing_extensions==4.12.2
-tzdata==2025.1
-umap-learn==0.5.7
-urllib3==2.3.0
 watchdog==6.0.0
