@@ -38,15 +38,15 @@ topics = topic_model.transform(cleaned_tweets, topic_embeddings)[0]
 
 
 
-# 📌 Asignar tópicos a los tweets usando los embeddings pre-generados
+# Asignar tópicos a los tweets usando los embeddings pre-generados
 topics = topic_model.transform(cleaned_tweets, topic_embeddings)[0]
-print("Tópicos asignados a los tweets:", topics[:10])  # Mostrar los primeros 10 tópicos
+print("Tópicos asignados a los tweets:", topics[:10])  # Muestra los primeros 10 resultados
 
-# 📌 Cargar modelo de sentimiento RoBERTa
+# Cargar modelo de sentimiento RoBERTa
 sentiment_model = AutoModelForSequenceClassification.from_pretrained("cardiffnlp/twitter-roberta-base-sentiment")
 tokenizer = AutoTokenizer.from_pretrained("cardiffnlp/twitter-roberta-base-sentiment")
 
-# 📌 Analizar el sentimiento de cada tweet
+# Analizar el sentimiento de cada tweet
 sentiment_labels = []
 sentiment_scores = []
 
@@ -61,7 +61,7 @@ for tweet in cleaned_tweets:
     sentiment_labels.append(sentiment)
     sentiment_scores.append(polarity_score)
 
-# 📌 Crear DataFrame con los resultados
+# Crear DataFrame con los resultados
 sentimentalTopics = pd.DataFrame({
     "tweet": cleaned_tweets,
     "topic": topics,
@@ -69,7 +69,7 @@ sentimentalTopics = pd.DataFrame({
     "sentiment_score": sentiment_scores  # Polaridad (positivo - negativo)
 })
 
-# 📌 Guardar los resultados en un archivo CSV
+# Guardar los resultados en un archivo CSV
 sentimentalTopics.to_csv("/home/mario/Documents/camiApp/data/sentiment_topic_analysis.csv", index=False)
 
 print("Análisis de sentimiento y tópicos completado y guardado correctamente.")
