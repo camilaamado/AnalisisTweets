@@ -1,11 +1,11 @@
-# Análisis de Tópicos y Sentimientos de una base de datos de tweets
+# Análisis de tópicos y sentimientos de una base de datos de tweets
 
 Este proyecto tiene como objetivo explorar el análisis de tópicos y sentimientos en una base de datos de tweets relacionados con la depresión. Se llevó a cabo un análisis exploratorio sobre un conjunto de datos descargado desde la plataforma *Kaggle* (Sentimental Analysis for Tweets), en el que se examinan los principales temas tratados en los tweets. Para este estudio, se utilizaron dos modelos de procesamiento de lenguaje natural: **BERTopic**, para identificar los tópicos predominantes, y **RoBERTa**, para clasificar los sentimientos asociados a los tweets.
 
 La base de datos se encuentra [aqui](https://www.kaggle.com/datasets/gargmanas/sentimental-analysis-for-tweets)
 
 
-## Características y Funcionalidades:
+## Características y funcionalidades:
 
 ### Primer paso: preprocesamiento y limpieza de datos.
 #### Limpieza y preprocesamiento de los tweets:
@@ -73,7 +73,7 @@ La aplicación interactiva fue desarrollada con **Streamlit** y se encuentra en 
 - **Clustering**: HDBSCAN
 - **Procesamiento de lenguaje natural (NLP)**: nltk, transformers, PyTorch
 - **Visualización de datos**: matplotlib, seaborn, plotly, altair
-- **Serialización de Modelos**: joblib
+- **Serialización de modelos**: joblib
 
 
 
