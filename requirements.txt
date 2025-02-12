@@ -1,8 +1,10 @@
 #pip install -r requirements.txt
 
+numpy>=2.0.0
+numba==0.61.0
 plotly>=4.7.0
 configparser==5.0.0
-wordcloud == 1.8.1
+wordcloud==1.9.4
 bertopic==0.9.1
 nltk==3.8.1
 emoji==1.6.0
@@ -39,7 +41,6 @@ mpmath==1.3.0
 narwhals==1.25.1
 networkx==3.4.2
 numba==0.61.0
-numpy==2.2.2
 nvidia-cublas-cu12==12.4.5.8
 nvidia-cuda-cupti-cu12==12.4.127
 nvidia-cuda-nvrtc-cu12==12.4.127
