@@ -2,7 +2,7 @@
 
 numpy>=2.0.0
 numba==0.61.0
-plotly
+plotly ==5.10.0
 configparser==5.0.0
 wordcloud==1.9.4
 bertopic==0.9.1
@@ -78,7 +78,7 @@ sentence-transformers==3.4.1
 setuptools==75.8.0
 six==1.17.0
 smmap==5.0.2
-streamlit==1.42.0
+streamlit==1.41.0
 sympy==1.13.1
 tenacity==9.0.0
 threadpoolctl==3.5.0
